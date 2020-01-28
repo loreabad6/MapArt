@@ -3,13 +3,14 @@ library(sf)
 library(osmdata)
 library(osmplotr)
 library(dplyr)
-bbox_select <- getbb('salzburg, at') 
-bbox_select[,] <- c(12.9, 47.7, 13.2, 47.9)
-bbox_map <- matrix(c(12.92, 47.71, 13.15, 47.86), nrow = 2)
+bbox_select <- getbb('milano, it') 
+bbox_select[,] <- c(9.04, 45.38, 9.27, 45.56)
+bbox_map <- matrix(c(9.1, 45.39, 9.28, 45.57), nrow = 2)
 # muenster: 7.56, 51.90, 7.7, 52.00
 # salzburg: 12.9, 47.73, 13.10, 47.85
 # sbg_map: 12.9, 47.7, 13.2, 47.9
 # lisbon: -9.21, 38.65, -9.03, 38.81
+# milano: 9.04, 45.38, 9.27, 45.56
 
 # dat_B <- extract_osm_objects (key = 'building', bbox = bbox_select)
 dat_H <- extract_osm_objects (key = 'highway', bbox = bbox_select)
@@ -39,4 +40,4 @@ map <- add_osm_objects (map, dat_H_2, col = 'gray50',  border = NA, size = 0.2)
 map <- add_osm_objects (map, dat_R, col = 'gray20', border = NA)
 
 print_osm_map (map)
-# print_osm_map (map, dpi = 900, filename = 'salzburg.png')
+# print_osm_map (map, dpi = 900, filename = 'milano.png')
