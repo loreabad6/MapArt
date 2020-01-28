@@ -4,8 +4,8 @@ library(osmdata)
 library(osmplotr)
 library(dplyr)
 bbox_select <- getbb('milano, it') 
-bbox_select[,] <- c(9.04, 45.38, 9.27, 45.56)
-bbox_map <- matrix(c(9.1, 45.39, 9.28, 45.57), nrow = 2)
+bbox_select[,] <- c(9.09, 45.44, 9.27, 45.50)
+bbox_map <- matrix(c(9.095, 45.445, 9.275, 45.505), nrow = 2) 
 # muenster: 7.56, 51.90, 7.7, 52.00
 # salzburg: 12.9, 47.73, 13.10, 47.85
 # sbg_map: 12.9, 47.7, 13.2, 47.9
@@ -32,12 +32,12 @@ dat_H_2 <- dat_H %>%
   filter(highway %in% c(#"bridleway","cycleway","footway",      
                         "living_street",#"path","pedestrian",
                         "residential", "unclassified"))#,"road","track","unclassified"))
-map <- osm_basemap (bbox = bbox_map, bg = 'white')
+map <- osm_basemap (bbox = bbox_map, bg = 'grey30')
 
-map <- add_osm_objects (map, dat_H_1, col = 'gray50', border = NA, size = 0.5)
-map <- add_osm_objects (map, dat_H_2, col = 'gray50',  border = NA, size = 0.2)
+map <- add_osm_objects (map, dat_H_1, col = 'gray90', border = NA, size = 0.5)
+map <- add_osm_objects (map, dat_H_2, col = 'gray90',  border = NA, size = 0.2)
 # map <- add_osm_objects (map, dat_C, col = 'gray50', border = NA, size = 0.2)
-map <- add_osm_objects (map, dat_R, col = 'gray20', border = NA)
+map <- add_osm_objects (map, dat_R, col = 'gray10', border = NA)
 
 print_osm_map (map)
-# print_osm_map (map, dpi = 900, filename = 'milano.png')
+print_osm_map (map, dpi = 900, filename = 'milano.png')
