@@ -40,4 +40,4 @@ map <- add_osm_objects (map, dat_H_2, col = 'gray90',  border = NA, size = 0.2)
 map <- add_osm_objects (map, dat_R, col = 'gray10', border = NA)
 
 print_osm_map (map)
-print_osm_map (map, dpi = 900, filename = 'milano.png')
+print_osm_map (map, dpi = 1800, filename = 'milano1.png')
