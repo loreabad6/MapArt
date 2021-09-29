@@ -45,7 +45,7 @@ print_osm_map (map)
 print_osm_map (
   map,
   dpi = 1800,
-  filename = 'buenos_aires.png'
+  filename = 'out/buenos_aires.png'
 )
 
-knitr::plot_crop('buenos_aires.png')
+knitr::plot_crop('out/buenos_aires.png')
